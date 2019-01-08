@@ -1,0 +1,26 @@
+#配置端口号
+server:
+  port: 8080
+
+#配置数据库
+spring:
+  profiles:
+    active: a
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: landi123
+
+#配置xml映射
+mybatis:
+  mapper-locations: mapper/*.xml
+
+
+name: Jack
+age: 18
+content: "name: ${name}, age: ${age}"
+
+student:
+  name: Michael
+  age: 20
