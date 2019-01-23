@@ -1,0 +1,11 @@
+stages:
+- build
+
+job1:
+  stage: build
+  script:
+  - pwd
+#   only:
+#   - master
+  tags:
+  - test-runner
