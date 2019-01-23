@@ -1,6 +1,8 @@
 stages:
 - build
 
+chcp 850
+
 job1:
   stage: build
   script:
