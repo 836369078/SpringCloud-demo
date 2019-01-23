@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class HelloController {
@@ -26,6 +27,18 @@ public class HelloController {
     @Value("${content}")
     private String content;
 
+
+    @RequestMapping(value = "/ims", method = RequestMethod.GET)/**
+     * 根据关键字对商户ID与商户名进行过滤
+     *
+     * @param keyword 关键字
+     * @throws
+     * @return
+     */
+    public List<Map<String, Object>> getShop(@RequestParam(value = "keyword", defaultValue = "", required = false) String keyword) {
+        return helloService.getShop(keyword);
+    }
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String say() {
         return content;
@@ -36,9 +49,9 @@ public class HelloController {
         return student.getName();
     }
 
-    @RequestMapping(value = "/num/{id}", method = RequestMethod.GET)
-    public String num(@PathVariable("id") Integer id) {
-        return "id = " + id;
+    @RequestMapping(value = "/num/{id}&{ids}", method = RequestMethod.GET)
+    public String num(@PathVariable("id") Integer id, @PathVariable("ids") Integer ids) {
+        return "id = " + id + "ids = " + ids;
     }
 
     @GetMapping(value = "/num2")

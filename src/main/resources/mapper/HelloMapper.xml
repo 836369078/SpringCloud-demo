@@ -2,8 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.test.mapper.HelloMapper">
 
-    <select id="getStudent" resultType="com.springboot.test.entity.Student">
-        select * from student
+    <!--<select id="getStudent" resultType="com.springboot.test.entity.Student">-->
+        <!--select * from student-->
+    <!--</select>-->
+
+    <select id="getShop" resultType="hashMap">
+        select * from SHOP
+        WHERE
+        rownum <![CDATA[<=]]> '10'
+        <if test="keyword != '' and keyword != null">
+            AND (SHOP_ID LIKE '%${keyword}%'
+            OR
+            SHOP_NAME LIKE '%${keyword}%')
+        </if>
     </select>
 
 </mapper>

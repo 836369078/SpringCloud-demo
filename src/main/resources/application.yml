@@ -2,19 +2,72 @@
 server:
   port: 8080
 
-#配置数据库
+#配置mysql
 spring:
   profiles:
     active: a
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
-    username: root
-    password: landi123
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+##    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+##    username: root
+##    password: root
+#    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+#    username: root
+#    password: landi123
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.10.50.229:1521:orcl
+    username: ldfwTest
+    password: ldfwTest
+
+
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
+
+  #Zipkin
+  zipkin:
+    base-url: http://10.10.111.118:9411
+#    base-url: http://zipkin-server:9411
+  application:
+    name: springboot-tests
+
+   # security账户密码配置
+  security:
+    user:
+      name: root
+      password: root
 
 #配置xml映射
 mybatis:
   mapper-locations: mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.10.111.117:30011/eureka/
+#      defaultZone: http://eureka-service:8082/eureka/
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+    prefer-ip-address: true
+    hostname: spring-boot
+    instance-id: sprint-boot:8080
+
+#Spring Boot Admin 应用监控功能
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
 
 
 name: Jack
@@ -24,3 +77,4 @@ content: "name: ${name}, age: ${age}"
 student:
   name: Michael
   age: 20
+
