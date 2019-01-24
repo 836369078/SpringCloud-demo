@@ -24,5 +24,6 @@ build-jar:
   stage: build
   script:
     - cd "$CI_PROJECT_DIR"
+    - pwd
     - mvn clean install package '-Dmaven.test.skip=true'
     - java -jar ./target/boot.jar
