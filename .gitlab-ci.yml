@@ -27,3 +27,5 @@ build-jar:
     - pwd
     - mvn clean install package '-Dmaven.test.skip=true'
     - java -jar ./target/boot.jar
+  tag: 
+    - runner-test2
