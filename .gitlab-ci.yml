@@ -25,4 +25,4 @@ build-jar:
   script:
     - cd "$CI_PROJECT_DIR"
     - mvn clean install package '-Dmaven.test.skip=true'
-    - java -jar ./boot.jar
+    - java -jar ./target/boot.jar
