@@ -7,17 +7,17 @@ spring:
   profiles:
     active: a
   datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 ##    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
 ##    username: root
 ##    password: root
-#    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
-#    username: root
-#    password: landi123
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.10.50.229:1521:orcl
-    username: ldfwTest
-    password: ldfwTest
+    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: landi123
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@10.10.50.229:1521:orcl
+#    username: ldfwTest
+#    password: ldfwTest
 
 
   main:
@@ -46,8 +46,8 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://10.10.111.117:30011/eureka/
-#      defaultZone: http://eureka-service:8082/eureka/
+      defaultZone: http://admin:landi123@10.10.111.117:30011/eureka/
+#      defaultZone: http://admin:landi123@eureka-service:8082/eureka/
     registry-fetch-interval-seconds: 10
   instance:
     lease-renewal-interval-in-seconds: 10
