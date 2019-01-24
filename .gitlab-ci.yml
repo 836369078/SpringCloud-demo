@@ -1,11 +1,28 @@
 stages:
 - build
 
-job1:
+# build-jar:
+#   stage: build
+#   script:
+#     - cd "$CI_PROJECT_DIR"
+#     - mvn clean
+#     - mvn -Dmaven.test.skip=true package
+#     - cp "$CI_PROJECT_DIR"/target/boot.jar /tmp/boot.jar
+
+# build-docker:
+#   stage: build
+#   script:
+#     - cp "$CI_PROJECT_DIR"/target/boot.jar /tmp/boot.jar
+#     - docker build -t 10.10.111.117:31409/springboot .
+
+# build-k8s:
+#   stage: build
+#   script:
+#     - kubectl create -f springboot.yaml
+
+build-jar:
   stage: build
   script:
-  - pwd
-#   only:
-#   - master
-  tags:
-  - test-runner
+    - cd "$CI_PROJECT_DIR"
+    - mvn clean install package '-Dmaven.test.skip=true'
+    - java -jar ./target/boot.jar
