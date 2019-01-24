@@ -23,8 +23,8 @@ stages:
 build-jar:
   stage: build
   script:
-    # - cd "$CI_PROJECT_DIR"
+    - cd "$CI_PROJECT_DIR"
     - pwd
-    # - mvn clean
-    # - mvn -Dmaven.test.skip=true package
-    # - java -jar ./boot.jar
+    - mvn clean
+    - mvn -Dmaven.test.skip=true package
+    - java -jar ./boot.jar
