@@ -3,7 +3,7 @@
 cd "$CI_PROJECT_DIR"
 
 #项目打包
-mvn clean install package '-Dmaven.test.skip=true'
+mvn -Dmaven.test.skip=true package
 
 #进入target文件夹
 cd ./target
