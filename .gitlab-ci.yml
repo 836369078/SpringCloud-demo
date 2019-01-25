@@ -13,3 +13,5 @@ build-k8s:
   script:
     - kubectl delete -f test-1.yaml
     - kubectl create -f test-1.yaml
+  tags: 
+    - runner-test
