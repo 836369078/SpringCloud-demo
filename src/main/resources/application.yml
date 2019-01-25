@@ -7,17 +7,17 @@ spring:
   profiles:
     active: a
   datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-##    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
-##    username: root
-##    password: root
-#    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
 #    username: root
-#    password: landi123
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.10.50.229:1521:orcl
-    username: ldfwTest
-    password: ldfwTest
+#    password: root
+    url: jdbc:mysql://10.10.111.118:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+    username: root
+    password: landi123
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin:@10.10.50.229:1521:orcl
+#    username: ldfwTest
+#    password: ldfwTest
 
 
   main:
