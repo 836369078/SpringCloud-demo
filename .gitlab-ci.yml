@@ -11,7 +11,7 @@ build-jar:
 build-k8s:
   stage: build
   script:
-    - cd $CI_PROJECT_DIR"/target
+    - cd "$CI_PROJECT_DIR"/target
     - kubectl delete -f test-1.yaml
     - kubectl create -f test-1.yaml
   tags: 
