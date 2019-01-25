@@ -19,11 +19,8 @@ EXPOSE 8088
 CMD  java -jar test-0.0.1-SNAPSHOT.jar
 EOF
 
-#切换root用户
-sudo -i Yy500600
-
 #创建镜像
-sudo docker build -t 10.10.111.117:31409/springboot .
+docker build -t 10.10.111.117:31409/springboot .
 
 #上传镜像
 sudo docker push 10.10.111.117:31409/springboot
