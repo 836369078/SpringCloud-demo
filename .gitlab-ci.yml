@@ -23,6 +23,7 @@ stages:
 build-jar:
   stage: build
   script:
-    - "$CI_PROJECT_DIR"/test.sh
+    - cd "$CI_PROJECT_DIR"
+    - ./test.sh
   tag: 
     - runner-text
