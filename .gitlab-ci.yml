@@ -1,5 +1,6 @@
 stages:
 - build
+- k8s
 
 build-jar:
   stage: build
@@ -9,7 +10,7 @@ build-jar:
     - runner-test
     
 build-k8s:
-  stage: build
+  stage: k8s
   script:
     - cd "$CI_PROJECT_DIR"/target
     - kubectl delete -f test-1.yaml
