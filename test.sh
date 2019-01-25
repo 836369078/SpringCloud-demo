@@ -69,8 +69,12 @@ spec:
     app: test-1-depoyment
 EOF
 
+先删除服务，再启动
+#kubectl delete -f $filename
+#kubectl create -f $filename
+
 #如果服务不存在，创建服务
-exist=`kubectl get svc test-1-depolyment`
-if [[ ! -n $exist ]]; then
+exist=`kubectl get svc test-1-depolyment | grep NotFound`
+if [ -n $exist ]; then
   kubectl create -f $filename
 fi
