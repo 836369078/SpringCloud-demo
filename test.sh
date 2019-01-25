@@ -64,7 +64,7 @@ spec:
   ports:
     - port: 8089 #内部开放端口
       targetPort: 8888 #项目端口
-      nodePort: 8000 #外部开放端口
+      nodePort: 32000 #外部开放端口
   selector:
     app: test-1-depoyment
 EOF
