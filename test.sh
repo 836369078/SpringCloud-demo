@@ -71,6 +71,7 @@ EOF
 
 #先删除服务，再启动
 pwd
+pwd
 kubectl delete -f $filename
 kubectl create -f $filename
 
