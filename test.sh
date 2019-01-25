@@ -28,8 +28,8 @@ sudo docker push 10.10.111.117:31409/springboot
 #创建K8S配置文件
 filename="test-1.yaml"
 cat << EOF > $filename
-kind: Replication
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
    app: test-1-depolyment
@@ -52,8 +52,8 @@ spec:
         - containerPort: 8080 #运行端口
           protocol: TCP
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   labels:
     app: test-1-depoyment
