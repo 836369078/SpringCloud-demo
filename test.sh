@@ -71,6 +71,6 @@ EOF
 
 #如果服务不存在，创建服务
 exist="kubectl get svc test-1-depolyment"
-if [! -n $exist ];then
+if [ ! -n $exist ];then
   kubectl create -f $filename
 fi
