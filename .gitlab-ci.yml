@@ -25,5 +25,5 @@ build-jar:
   script:
     - cd "$CI_PROJECT_DIR"
     - ./test.sh
-  tag: 
+  tags: 
     - runner-test
