@@ -69,7 +69,7 @@ spec:
     app: test-1-depoyment
 EOF
 
-先删除服务，再启动
+#先删除服务，再启动
 #kubectl delete -f $filename
 #kubectl create -f $filename
 
