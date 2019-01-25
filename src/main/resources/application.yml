@@ -25,8 +25,8 @@ spring:
 
   #Zipkin
   zipkin:
-    base-url: http://10.10.111.118:9411
-#    base-url: http://zipkin-server:9411
+#    base-url: http://10.10.111.118:9411
+    base-url: http://zipkin-server:9411
   application:
     name: springboot-tests
 
@@ -46,8 +46,8 @@ mybatis:
 eureka:
   client:
     service-url:
-      defaultZone: http://admin:landi123@10.10.111.117:30011/eureka/
-#      defaultZone: http://admin:landi123@eureka-service:8082/eureka/
+#      defaultZone: http://admin:landi123@10.10.111.117:30011/eureka/
+      defaultZone: http://admin:landi123@eureka-service:8082/eureka/
     registry-fetch-interval-seconds: 10
   instance:
     lease-renewal-interval-in-seconds: 10
