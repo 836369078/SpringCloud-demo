@@ -9,11 +9,11 @@ build-jar:
   tags: 
     - runner-test
     
-# build-k8s:
-#   stage: k8s
-#   script:
-#     - cd "$CI_PROJECT_DIR"/target
-#     - kubectl delete -f test-1.yaml
-#     - kubectl create -f test-1.yaml
-#   tags: 
-#     - runner-test
+build-k8s:
+  stage: k8s
+  script:
+    - cd "$CI_PROJECT_DIR"/target
+    - kubectl delete -f test-1.yaml
+    - kubectl create -f test-1.yaml
+  tags: 
+    - runner-test
