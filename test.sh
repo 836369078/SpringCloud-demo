@@ -14,9 +14,9 @@ FROM registry.cn-hangzhou.aliyuncs.com/java-jdk/openjdk:jdk8
 MAINTAINER LINJINP
 VOLUME /tmp
 LABEL app="test1" version="v1" by="linjinp"
-COPY test-0.0.1-SNAPSHOT.jar test-0.0.1-SNAPSHOT.jar
+COPY boot.jar boot.jar
 EXPOSE 8088
-CMD  java -jar test-0.0.1-SNAPSHOT.jar
+CMD  java -jar boot.jar
 EOF
 
 #创建镜像
