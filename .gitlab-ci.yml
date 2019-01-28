@@ -7,5 +7,5 @@ build-jar:
     - pwd
     # - sh "$CI_PROJECT_DIR"/test.sh
   tags: 
-    - k8s-test
+    - kubernetes-test
     
