@@ -12,8 +12,8 @@ build-jar:
 build-contain:
   stage: build
   script:
-    - pwd
-    # - sh "$CI_PROJECT_DIR"/test.sh
+    - cp "$CI_PROJECT_DIR"/target/boot.jar testtomcat：./
+    - ls
   tags: 
     - kubernetes-test
     
