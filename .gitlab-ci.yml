@@ -3,9 +3,10 @@ stages:
 
 build-jar:
   stage: build
+  before_script:
+    - mvn -Dmaven.test.skip=true package
   script:
     - pwd
-    - mvn -version
     # - sh "$CI_PROJECT_DIR"/test.sh
   tags: 
     - kubernetes-test
