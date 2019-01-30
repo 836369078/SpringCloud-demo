@@ -5,7 +5,7 @@ build-jar:
   stage: build
   script:
     - pwd
-    # - mvn clean
+    - mvn clean
     # - sh "$CI_PROJECT_DIR"/test.sh
   tags: 
     - kubernetes-test
