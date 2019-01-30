@@ -2,17 +2,9 @@ stages:
 - package
 - build
 
-build-jar:
-  stage: package
-  script:
-    - mvn -Dmaven.test.skip=true package
-  tags: 
-    - runner-test
-
 build-contain:
   stage: build
   script:
-    - cp "$CI_PROJECT_DIR"/target/boot.jar testtomcat：./
     - ls
   tags: 
     - kubernetes-test
