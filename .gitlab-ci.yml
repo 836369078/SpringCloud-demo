@@ -1,11 +1,11 @@
 stages:
-- package
 - build
 
 build-contain:
   stage: build
   script:
-    - ls
+    - mvn -Dmaven.test.skip=true package
+    - java -jar ./target/boot.jar
   tags: 
     - kubernetes-test
     
