@@ -5,7 +5,7 @@ build-jar:
   stage: build
   script:
     - pwd
-    - kubectl get namespace
+    - java -version
     # - sh "$CI_PROJECT_DIR"/test.sh
   tags: 
     - kubernetes-test
