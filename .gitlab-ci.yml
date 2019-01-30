@@ -1,10 +1,16 @@
 stages:
+- package
 - build
 
 build-jar:
-  stage: build
-  before_script:
+  stage: package
+  script:
     - mvn -Dmaven.test.skip=true package
+  tags: 
+    - runner-test
+
+build-contain:
+  stage: build
   script:
     - pwd
     # - sh "$CI_PROJECT_DIR"/test.sh
