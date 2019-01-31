@@ -4,10 +4,8 @@ stages:
 build-contain:
   stage: build
   script:
-    # - kubectl create namespace test
-    # - mvn -Dmaven.test.skip=true package
-    # - java -jar ./target/boot.jar
     - pwd
+    - sh test.sh
   tags: 
-    - kubernetes-test
+    - runner-test
     
