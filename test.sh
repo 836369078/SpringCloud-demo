@@ -71,8 +71,8 @@ EOF
 
 #先删除服务，再启动
 pwd
-#kubectl delete -f $filename
-kubectl create -f $filename
+kubectl delete -f $filename
+#kubectl create -f $filename
 
 #如果服务不存在，创建服务
 #echo "create service"
