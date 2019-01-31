@@ -28,7 +28,7 @@ sudo docker push 10.10.111.117:31409/springboot
 #创建K8S配置文件
 filename="test-1.yaml"
 cat << EOF > $filename
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -52,7 +52,7 @@ spec:
         - containerPort: 8080 #运行端口
           protocol: TCP
 ---
-apiVersion: v1beta1
+apiVersion: v1
 kind: Service
 metadata:
   labels:
@@ -72,7 +72,7 @@ EOF
 #先删除服务，再启动
 pwd
 kubectl delete -f $filename
-kubectl create -f $filename
+#kubectl create -f $filename
 
 #如果服务不存在，创建服务
 #echo "create service"
