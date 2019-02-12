@@ -4,7 +4,6 @@ stages:
 build-contain:
   stage: build
   script:
-    - pwd
     - sh test.sh
   tags: 
     - test2
