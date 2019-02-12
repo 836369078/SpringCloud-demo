@@ -70,7 +70,6 @@ spec:
 EOF
 
 #先删除服务，再启动
-kubectl version
 kubectl delete -f $filename
 kubectl create -f $filename
 
