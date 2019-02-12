@@ -6,5 +6,5 @@ build-contain:
   script:
     - sh test.sh
   tags: 
-    - test2
+    - run-test
     
