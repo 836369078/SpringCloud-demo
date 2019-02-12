@@ -1,6 +1,6 @@
 #!/bin/sh
 #进入文件根目录
-cd "$CI_PROJECT_DIR"
+#cd "$CI_PROJECT_DIR"
 
 #项目打包
 mvn -Dmaven.test.skip=true package
