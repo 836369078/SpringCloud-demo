@@ -6,5 +6,4 @@ build-contain:
   script:
     - sh test.sh
   tags: 
-    - runner-test
-    
+    - run-test
