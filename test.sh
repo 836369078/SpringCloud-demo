@@ -20,10 +20,10 @@ CMD  java -jar boot.jar
 EOF
 
 #创建镜像
-sudo docker build -t 10.10.111.117:31409/springboot .
+docker build -t 10.10.111.117:31409/springboot .
 
 #上传镜像
-sudo docker push 10.10.111.117:31409/springboot
+docker push 10.10.111.117:31409/springboot
 
 #创建K8S配置文件
 filename="test-1.yaml"
@@ -70,8 +70,6 @@ spec:
 EOF
 
 #先删除服务，再启动
-pwd
-kubectl version
 kubectl delete -f $filename
 kubectl create -f $filename
 
