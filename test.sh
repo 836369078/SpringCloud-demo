@@ -70,12 +70,12 @@ spec:
 EOF
 
 #先删除服务，再启动
-kubectl delete -f $filename
-kubectl create -f $filename
+# kubectl delete -f $filename
+# kubectl create -f $filename
 
 #如果服务不存在，创建服务
-#echo "create service"
-#exist=`kubectl get service test-1-depolyment | grep NotFound`
-#if [ -n exist ]; then
-#  kubectl create -f $filename
-#fi
+echo "create service"
+exist=`kubectl get service test-1-depolyment | grep NotFound`
+if [ -n exist ]; then
+ kubectl create -f $filename
+fi
